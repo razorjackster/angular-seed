@@ -1,0 +1,34 @@
+<nav class="navbar navbar-default sidebar" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div uib-collapse="navCollapsed" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+
+				<li ng-repeat="item in menu" ng-class="{active: isActive('/{{item.sref}}')}"}>
+					<a ng-if="item.sref" ui-sref="{{item.sref}}">{{item.label}}
+						<span class="pull-right hidden-xs showopacity fa fa-dashboard fa-lg"></span>
+					</a>
+				</li>
+
+<!-- 				<li class="dropdown" uib-dropdown uib-dropdown-toggle>
+					<a href="#" class="dropdown-toggle"> KUR <span class="caret"></span>
+						<span class="pull-right hidden-xs showopacity fa fa-dashboard fa-lg"></span>
+					</a>
+					<ul class="dropdown-menu forAnimate" role="menu">
+						<li ng-repeat="subitem in item.submenu"><a href="#">{{subitem.label}}</a></li>
+					</ul>
+				</li> -->
+
+
+			</ul>
+		</div>
+
+	</div>
+</nav>
